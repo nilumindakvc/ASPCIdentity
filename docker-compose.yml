@@ -1,0 +1,50 @@
+networks:
+  backend_db_network:
+  frontend_backend_network:
+
+
+services:
+  identity_database:
+    container_name: aspauth_db
+    image: mcr.microsoft.com/mssql/server:2025-latest
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=6230989Aab
+    networks:
+      - backend_db_network
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+  identity_backend:
+    container_name: aspauth_backend
+    build:
+      context: ./Identity
+      args:
+      - APP_UID=1000
+    ports:
+      - "5000:8080"
+    depends_on:
+      - identity_database
+    environment:
+      - DB_NAME=UserManagement
+      - DB_PASSWORD=6230989Aab
+      - DB_HOST=identity_database
+    networks:
+      - backend_db_network
+      - frontend_backend_network
+
+  identity_frontend:
+    container_name: aspauth_frontend
+    build:
+      context: ./frontend/userlogin  
+    ports:
+      - "3000:80"
+    depends_on:
+      - identity_backend
+    networks:
+      - frontend_backend_network    
+
+volumes:
+  mssql_data:

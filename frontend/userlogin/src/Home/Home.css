@@ -1,0 +1,132 @@
+.main_section{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 85vh;
+    /* background-color: black; */
+    margin-left: 5px;
+    margin-right: 5px;
+    /* border-bottom: 1px solid black; */
+}
+
+.site_describe_container_pic{
+  width: 100%;
+  height: 700px;
+  background-image:url('/road.jpg'); /* Path to your image */
+  background-size: cover;       /* Scales the image to cover the container */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  margin-top: 20px;
+  position: relative;
+  z-index: -1;
+}
+
+.hero_section_para{
+    width: 100%;
+    height:250px;
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.41);
+    bottom: 50px;
+    padding: 20px;
+    z-index: -1;
+}
+.hero_section_main_para{
+    width: 100%;
+    height:auto;
+    position: absolute;
+    color: aliceblue;
+    padding: 20px;
+    top: 0;
+    z-index: -1;
+}
+.main_section_para{
+    width: 100%;
+    height:250px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.268);
+    bottom: 50px;
+    padding: 20px;
+    z-index: -1;
+}
+.img_right{
+  height: 100%;
+  width: 40%;
+  
+  /* background-color: aqua; */
+
+}
+.text_left{
+ height: 100%;
+ width: 60%;
+ /* background-color:white; */
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ margin-left: 60px;
+
+}
+.img_left{
+ height: 100%;
+ width: 50%;
+ /* background-color: aqua; */
+}
+.text_right{
+ height: 100%;
+ width: 50%;
+ /* background-color: white; */
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ margin-left: 100px;
+
+}
+.mask_image{
+ 
+  width: 80%;
+  height: 80%;
+  z-index: -1;
+  
+  background-size: cover;
+  background-position: center;
+
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+}
+
+.image_sec_1{
+  background-image: url('/globalpartner.jpg');
+  mask-image: url('/mask2.png');
+  -webkit-mask-image: url('/mask2.png');
+}
+
+
+.image_sec_2{
+  background-image: url('/welding.jpg');
+  mask-image: url('/mask2.png');
+  -webkit-mask-image: url('/mask2.png');
+
+}
+.image_sec_3{
+  background-image: url('/register.jpg');
+  mask-image: url('/mask3.png');
+  -webkit-mask-image: url('/mask3.png');
+
+}
+.image_sec_4{
+  background-image: url('/rating.jpg');
+  mask-image: url('/mask2.png');
+  -webkit-mask-image: url('/mask2.png');
+
+}
+.starter_agent{
+  width: 100vw;
+  height: 100vh;
+}

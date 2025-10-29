@@ -1,0 +1,22 @@
+.main_container_login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    width: 100%;
+    height: 650px;
+    background-image:url('/road.jpg'); /* Path to your image */
+    background-size: cover;       /* Scales the image to cover the container */
+    background-position: center;  /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin-top: 20px;
+          
+}
+.login_card_container{
+    width: 25%;
+    margin-top: 100px;
+    padding: 50px;
+
+}

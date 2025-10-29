@@ -1,0 +1,10 @@
+.footer_container{
+    width: 100%;
+    background-color:white;
+    height:auto;
+    margin-top: 50px;
+}
+.footer_text{
+    text-align: justify;
+    font-size: xx-small;
+}
