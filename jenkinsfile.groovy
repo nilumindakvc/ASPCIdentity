@@ -2,7 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "kvcn/frontend-app"
+        FRONTEND_IMAGE = "kvcn/frontend-app"
+        BACKEND_IMAGE = "kvcn/backend-app"
         GIT_REPO = "https://github.com/nilumindakvc/ASPCIdentity.git"
     }
 
@@ -16,7 +17,15 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t ${IMAGE_NAME}:latest -f frontend/userlogin/Dockerfile frontend/userlogin"
+                    sh "docker build -t ${FRONTEND_IMAGE}:latest -f frontend/userlogin/Dockerfile frontend/userlogin"
+                }
+            }
+        }
+
+        stage('Build Backend Docker Image') {
+            steps {
+                script {
+                    sh "docker build -t ${BACKEND_IMAGE}:latest -f Identity/Dockerfile Identity"
                 }
             }
         }
@@ -34,7 +43,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    sh "docker push ${IMAGE_NAME}:latest"
+                    sh "docker push ${FRONTEND_IMAGE}:latest"
+                    sh "docker push ${BACKEND_IMAGE}:latest"
                 }
             }
         }
